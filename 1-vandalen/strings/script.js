@@ -22,16 +22,16 @@ window.onload = function(){
                     stringchar = '#'
                 }
                 
-                if (stringchar === stringchar.toLocaleUpperCase())
+                else if (stringchar == stringchar.toLocaleUpperCase())
                 {
-                    stringchar == stringchar.toLowerCase();
+                    stringchar = stringchar.toLocaleLowerCase();
                 }
                 
-                if (stringchar === stringchar.toLocaleLowerCase())
+                else if (stringchar == stringchar.toLocaleLowerCase())
                 {
-                    stringchar == stringchar.toupperCase();
+                    stringchar = stringchar.toLocaleUpperCase();
                 }
-                
+                stringclone += stringchar;
             }
             return stringclone;
         }
