@@ -3,16 +3,38 @@
 window.onload = function(){
 
 	// I denna funktion ska du skriva koden för att hantera "spelet"
-	var convertString = function(str){
-		// Plats för förändring.		
-		// Returnera den konverterade strängen.
-		// Vid fel, kasta ett undantag med ett meddelande till användaren. 
-	
-
-
-
-
-
+	var convertString = function(str)
+	{
+        var stringclone = '';
+        
+        if (str === "")
+        {
+            return ["Du behöver skriva något"]
+        }
+        else
+        {
+            for (var i = 0; i < str.length; i++)
+            {
+                var stringchar = str.charAt(i);
+                
+                if(stringchar ==='a'|| stringchar ==='A')
+                {
+                    stringchar = '#'
+                }
+                
+                if (stringchar === stringchar.toLocaleUpperCase())
+                {
+                    stringchar == stringchar.toLowerCase();
+                }
+                
+                if (stringchar === stringchar.toLocaleLowerCase())
+                {
+                    stringchar == stringchar.toupperCase();
+                }
+                
+            }
+            return stringclone;
+        }
 
 	};
 	// ------------------------------------------------------------------------------
