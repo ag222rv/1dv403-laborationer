@@ -3,15 +3,29 @@
 window.onload = function(){
 
 	
-	var birthday = function(date){
-		
-
-
-			// Din kod här.
-
-
-
-
+	var birthday = function(date)
+    {
+        var time = new Date();
+        var inputTime = new Date(date.replace(/(\d{4})\.(\d{2})\.(\d{2})/, '3-2-1'));
+        inputTime.setFullYear(time.getFullYear());
+        
+        if (isNaN(inputTime))
+        {
+            throw new Error("Ange ett datum i formatet MM-DD-YYYY");
+        }
+        
+        if (inputTime .getTime() < time.getTime())
+        {
+            inputTime.setFullYear(time.getFullYear()+1);
+        }
+        if (time.getHours() > 12)
+        {
+            return Math.round((inputTime.getTime() - time.getTime())/(1000*60*60*24) +1);
+        }
+        else
+        {
+            return Math.round((inputTime.getTime() - time.getTime())/(1000*60*60*24));
+        } 
 	};
 	// ------------------------------------------------------------------------------
 
